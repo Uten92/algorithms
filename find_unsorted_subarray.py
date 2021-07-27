@@ -14,7 +14,7 @@ def find_unsorted_subarray(array):
             end_interval = i - 1
             break
     else:
-        end_interval = len(array)
+        end_interval = len(array) - 1
 
     return [start_interval, end_interval]
 
@@ -46,4 +46,4 @@ def test_find_unsorted_subarray_in_array_with_one_value():
 def test_find_unsorted_subarray_at_the_end_of_array():
     array = [1, 2, 5, 3]
     result = find_unsorted_subarray(array)
-    assert result == [2, 4]
+    assert result == [2, 3]
