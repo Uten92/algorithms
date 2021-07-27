@@ -7,7 +7,7 @@ def find_unsorted_subarray(array):
             start_interval = i - 1
             break
     else:
-        return []
+        return None
 
     for i in range(start_interval + 1, len(array)):
         if array[i] >= array[start_interval]:
@@ -28,19 +28,19 @@ def test_find_unsorted_subarray_simple_case():
 def test_find_unsorted_subarray_in_sorted_array():
     array = sorted([random.randrange(100) for _ in range(random.randrange(100))])
     interval = find_unsorted_subarray(array)
-    assert interval == []
+    assert interval is None
 
 
 def test_find_unsorted_subarray_in_empty_array():
     array = []
     interval = find_unsorted_subarray(array)
-    assert interval == []
+    assert interval is None
 
 
 def test_find_unsorted_subarray_in_array_with_one_value():
     array = [random.randrange(100), ]
     interval = find_unsorted_subarray(array)
-    assert interval == []
+    assert interval is None
 
 
 def test_find_unsorted_subarray_at_the_end_of_array():
